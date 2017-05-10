@@ -1,19 +1,33 @@
-var myApp=angular.module( 'myApp', [] );
-myApp.controller( 'WhereMyPeeps', [ '$http', function( $http ){
+var myApp = angular.module( 'myApp', [] );
+
+// set up a controller (inject $http if using);
+myApp.controller( 'WhereMyPeeps', function( $http ){ //NOTE remove ['$http']
+
 var vm = this;
+
 vm.addRecord = function(){
-var objectToSend ={
-name= vm.nameIn,
-location= vm.locationIn,
-};
-$http({
-method: 'POST',
-url: '/testPost',
-data: objectToSend
-});
-vm.nameIn ='';
-vm.locationIn='';
-};
+  console.log('in addRecord:');
+  var objectToSend ={
+    name: vm.nameIn,
+    location: vm.locationIn,
+  };// end objectToSend
+  console.log('add record', objectToSend);
+
+  // send item to app.js(sever)
+  $http({
+    method: 'POST',
+    url: '/testPost',
+    data: objectToSend
+  }).then(function(response){
+    console.log('back from sever:', response);
+  });// end $http
+
+  // empty inputs
+  vm.nameIn ='';
+  vm.locationIn='';
+  //update from sever
+}; // end of vm.addRecord function
+
 vm.getRecords = function(){
 $.http({
 method: 'GET',
@@ -25,4 +39,4 @@ console.log( vm.allTheRecords );
 console.log( response.statusText );
 };
 };
-}]);
+});
