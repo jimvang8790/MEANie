@@ -30,7 +30,7 @@ myApp.controller( 'WhereMyPeeps', function( $http ){ //NOTE remove ['$http']
     vm.nameIn ='';
     vm.locationIn='';
 
-    vm.getRecords(); //NOTE call inorder to show on DOM
+    // vm.getRecords(); //NOTE call inorder to show on DOM
     //update from sever
 }; // end of vm.addRecord function
 
@@ -45,8 +45,11 @@ myApp.controller( 'WhereMyPeeps', function( $http ){ //NOTE remove ['$http']
       vm.allTheRecords =  response.data;
     console.log( vm.allTheRecords );
   }); // end $http
-   function myError( response ){
-     console.log( response.statusText );
-   }
+
+  //NOTE don't know why this is here???
+  //  function myError( response ){
+  //    console.log( response.statusText );
+  //  } // end myError
+
   };// end getRecords
 }); // end WhereMyPeeps controller

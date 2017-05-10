@@ -25,10 +25,10 @@ Your final project should have a 'master' branch that is the final project. As w
 This is a 'peer' activity, but feel free to talk/work with your pod-mates and cohort-mates.
 
 Your github project should have the following branches:
-* 'master' (final assignment)
-* 'cleanUp' (fixed formatting and bugs fixed)
-* DomDisplay
-* 'delete' (added delete)
+- [x] 'master' (final assignment)
+- [x] 'cleanUp' (fixed formatting and bugs fixed)
+- [x] DomDisplay
+- [] 'delete' (added delete)
 
 Branching overview/workflow:
 ============================
