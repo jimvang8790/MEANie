@@ -30,7 +30,7 @@ console.log( 'req.body.name: ' + req.body.name );
 var recordToAdd={
 name:req.body.name,
 location:req.body.location
-}
+};
 // create new record
 var newRecord=ourModel( recordToAdd );
 newRecord.save();
