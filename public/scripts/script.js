@@ -29,6 +29,8 @@ myApp.controller( 'WhereMyPeeps', function( $http ){ //NOTE remove ['$http']
     // empty inputs
     vm.nameIn ='';
     vm.locationIn='';
+
+    vm.getRecords(); //NOTE call inorder to show on DOM
     //update from sever
 }; // end of vm.addRecord function
 
