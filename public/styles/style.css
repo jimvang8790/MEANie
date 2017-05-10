@@ -1,0 +1,11 @@
+.jumbotron {
+  text-align: center;
+}
+
+.blood {
+  background-image: url('http://vignette2.wikia.nocookie.net/animal-jam-clans-1/images/b/bb/Blood-dripping.gif/revision/latest?cb=20160704064326');
+  width: 800px;
+  height: 400px;
+  text-align: center;
+  /*background-repeat: repeat-x;*/
+}

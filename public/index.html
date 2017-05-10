@@ -5,19 +5,23 @@
     <title>MEANie</title>
     <script src="vendors/angular.min.js" charset="utf-8"></script>
     <script src="scripts/script.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="vendors/bootstrap.css">
+    <link rel="stylesheet" href="styles/style.css">
   </head>
   <body ng-app="myApp">
-    <img src='images/meanie_3.jpg' width=800 height=400 />
+    <div class="jumbotron" ><img src='images/meanie_4.gif' width=800 height=400 /></div>
     <h1>MEANie</h1>
     <p>A simple, ugly MEAN stack example. Console has output from GET call.</p>
-    <div ng-controller="WhereMyPeeps as wmp" >
+    <div class="blood" ng-controller="WhereMyPeeps as wmp" ><!-- ng-init="wmp.getRecords" to append on DOM when Add button is click -->
       <input type="text" value="" ng-model="wmp.nameIn" placeholder="Name">
       <input type="text" value="" ng-model="wmp.locationIn" placeholder="Location">
-      <button ng-click='wmp.addRecord()'>Add</button>
-      <button ng-click='wmp.getRecords()'>Read</button>
+      <button ng-click='wmp.addRecord()'>Add To DB</button>
+      <button ng-click='wmp.getRecords()'>Display on DOM</button>
       <div ng-repeat="ourModel in wmp.allTheRecords" lass="col-sm-3">
         <h3>{{ourModel.name}}</h3>
         <p>{{ourModel.location}}</p>
+        <!-- Delete Button -->
+        <button ng-click='wmp.deleteRecord()'>Delete</button>
       </div>
     </div>
   </body>

@@ -10,7 +10,7 @@ myApp.controller( 'WhereMyPeeps', function( $http ){ //NOTE remove ['$http']
   vm.allTheRecords = [];
 
   vm.addRecord = function(){
-    console.log('in addRecord:');
+    console.log('in addRecord');
     var objectToSend ={
       name: vm.nameIn,
       location: vm.locationIn,
@@ -30,7 +30,8 @@ myApp.controller( 'WhereMyPeeps', function( $http ){ //NOTE remove ['$http']
     vm.nameIn ='';
     vm.locationIn='';
 
-    // vm.getRecords(); //NOTE call inorder to show on DOM
+    // vm.getRecords(); //NOTE call inorder to show on DOM when Add button is click
+
     //update from sever
 }; // end of vm.addRecord function
 
@@ -47,9 +48,13 @@ myApp.controller( 'WhereMyPeeps', function( $http ){ //NOTE remove ['$http']
   }); // end $http
 
   //NOTE don't know why this is here???
-  //  function myError( response ){
-  //    console.log( response.statusText );
-  //  } // end myError
+   function myError( response ){
+     console.log( response.statusText );
+   } // end myError
 
   };// end getRecords
+
+  vm.deleteRecord = function(){
+    console.log('in deleteRecord');
+  };// end deleteRecord
 }); // end WhereMyPeeps controller
